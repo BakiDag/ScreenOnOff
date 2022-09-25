@@ -18,11 +18,14 @@ namespace ScreenOnOff
             DeviceDisplay.KeepScreenOn = true;
         }
 
-        private async Task OnClickedAsync(object sender, EventArgs e)
+        private async void TurnOffClick(object sender, EventArgs args)
         {
-            await DisplayAlert("Test Titel", "Testmessage here", "ok");
+            DeviceDisplay.KeepScreenOn = false;
+            //DeviceDisplay.KeepScreenOn = false;
+            var x = DeviceDisplay.KeepScreenOn;
+            await DisplayAlert("Test Titel", x.ToString(), "ok");
         }
-        private async void OnButtonClicked(object sender, EventArgs args)
+        private async void TurnOnClick(object sender, EventArgs args)
         {   
             DeviceDisplay.KeepScreenOn = true;
             //DeviceDisplay.KeepScreenOn = false;
